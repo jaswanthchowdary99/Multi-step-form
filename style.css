@@ -1,0 +1,173 @@
+@import url(https://fonts.google.com/specimen/Ubuntu);
+body{
+    display: flex;
+    justify-content: center;
+    background: #eff4fe;
+}
+.display {
+    width: 900px;
+    background-color:white;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 1px black;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+ /* side-bar styles */
+.form1 {
+    display: flex;
+    padding: 1rem;
+}
+.side-bar{
+    background-image: url("./assets/images/bg-sidebar-desktop.svg");
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 90vh;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 10px;
+    margin-bottom: -50px;
+    font-size: 15px;
+}
+.circle {
+    margin-top: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: White;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    border: 1px solid White;
+    border-radius: 50%; 
+}
+
+.circle:hover{
+    color: black;
+    background: rgb(189,226,245);
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+.content > * {
+    margin-bottom: 2px; 
+}
+.step{
+    display: flex;
+    align-items: center;
+    gap:15px
+}
+.step p{
+    font-weight:50 ;
+}
+
+ /* Step-1 styles */
+
+
+ .step-1{
+   display: flex;
+   align-items: start;
+   flex-direction: column;
+   padding: 10px;  
+   margin-left: -100px;
+ }
+ .main-content1{
+    display: flex;
+    align-items: center;
+    
+ }
+
+ .btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 325px;
+    margin-top: 60px;
+}
+ .button{
+   border-radius: 5px;
+   padding: 10px;
+   height: 45px;
+   width: 100px;
+   color: #fff;
+   background-color: rgb(23,74,138);
+   border: none;
+ }
+ .header{
+    margin-bottom: 30px;
+ }
+ .textbox{
+    padding: 15px;
+    width: 400px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-style:double;
+    border-color: rgb(231, 231, 236);
+ }
+ .textbox:hover{
+    border-color:rgb(103, 99, 177);
+ }
+ .textbox::placeholder{
+    font-weight: 600;
+    font-size: small;
+    font-family: inherit;
+ }
+ .para{
+    color: rgb(173,173,178);
+    font-weight: 600;
+ }
+ .error{
+    display: none;
+    color: red;
+    font-size: 0.9rem;
+    font-weight: 700;
+ }
+
+  /* Step-2 styles */
+
+.step-2{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding: 10px;  
+    margin-left: -100px;
+}
+.form2{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    gap: 1rem;
+    
+}
+.switch{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.plan{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 2px solid grey;
+    border-radius: 5px;
+    width: 100px;
+    height: 150px;
+    cursor: pointer;
+    padding: 10px;
+}
+.btn1{
+    border: none;
+    cursor: pointer;
+    background-color:transparent;
+
+}
