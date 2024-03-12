@@ -13,7 +13,7 @@
     />
      <link rel="stylesheet" href="style.css">
     <title>Multi-step form</title>
-    <link rel="stylesheet" href="index.js">
+    <script src="index.js"></script>
 
   </head>
   <body>
@@ -22,28 +22,28 @@
 
       <div class="side-bar" ><!-- Side-bar opening tag -->
         <div class="step">
-          <div class="circle" onclick="showStep(1)">1</div>
+          <div class="circle">1</div>
           <div class="content">
             <p>STEP 1</p>
             <b>YOUR INFO</b>
           </div>
         </div>
         <div class="step">
-          <div class="circle" onclick="showStep(2)">2</div>
+          <div class="circle">2</div>
           <div class="content">
             <p>STEP 2</p>
             <b>SELECT PLAN</b>
           </div>
         </div>
         <div class="step">
-          <div class="circle" onclick="showStep(3)">3</div>
+          <div class="circle">3</div>
           <div class="content">
             <p>STEP 3</p>
             <b>ADD-ONS</b>
           </div>
         </div>
         <div class="step">
-          <div class="circle" onclick="showStep(4)">4</div>
+          <div class="circle">4</div>
           <div class="content">
             <p>STEP 4</p>
             <b>SUMMARY</b>
@@ -52,48 +52,48 @@
        </div> <!-- Side-bar closing tag -->
 
 
-       <div class="step-1" style="display: none;"><!-- Step-1 opening tag -->
+       <div class="step-1"><!-- Step-1 opening tag -->
         <div class="header">
           <h1 class="head">Personal Info</h1>
           <p class="para">Please provide your name,email address,and phone number.</p>
         </div>
-        <form>
+        <form  id="form">
           <div class="main-content1">
           <label for="Name">Name</label>
-          <p class="error">This field is required</p>
+          <p class="error" id="nameError">This field is required</p>
         </div>
         <input class="textbox" type="text" id="name" placeholder="Enter your name" required>
 
         <div class="main-content1">
           <label for="email">Email <Address></Address></label>
-          <p class="error">This field is required</p>
+          <p class="error" id="emailError">This field is required</p>
         </div>
-        <input class="textbox" type="email" id="name" placeholder="e.g. jaswanth@gmail.com" required>
+        <input class="textbox" type="email" id="email" placeholder="e.g. jaswanth@gmail.com" required>
 
         <div class="main-content1">
           <label for="phone">Phone Number <Address></Address></label>
-          <p class="error">This field is required</p>
+          <p class="error" id="phoneError">This field is required</p>
         </div>
-        <input class="textbox" type="tel" id="name" placeholder="e.g. +1 234 567 890" required>
-
-          <div class="btn">
-            <button class="button"><strong>Next Step</strong></button>
-          </div>
+        <input class="textbox" type="tel" id="phone" placeholder="e.g. +1 234 567 890" required>
         </form> 
+        <div class="buttons">
+          <button class="btn2" id="nextButton"><strong>Next Step</strong></button>
+        </div>
        </div><!-- Step-1 closing tag -->
        
 
-       <div class="step-2"><!-- Step-2 opening tag -->
-        <div class="header2">
+       <div class="step-2" style="display: none;" ><!-- Step-2 opening tag -->
+        <div class="header">
           <h1 class="head2">Select your Plan</h1>
-          <p class="para2">You have the option of monthly or yearly billing.</p>
+          <p class="para">You have the option of monthly or yearly billing.</p>
         </div>
-        <form class="form2">
+        <form class="form2"><!-- Form2  opening tag -->
           <div class="plan">
             <img src="./assets/images/icon-arcade.svg" alt="">
             <div class="info">
               <h3>Arcade</h3>
-            <span>$9/mo</span>
+            <span id="price1">$9/mo</span>
+            <p class="caption" id="freeMonths1"></p>
             </div>
           </div>
 
@@ -101,7 +101,8 @@
             <img src="./assets/images/icon-advanced.svg" alt="">
             <div class="info">
               <h3>Advanced</h3>
-              <span>$12/mo</span>
+              <span id="price2">$12/mo</span>
+              <p class="caption" id="freeMonths2"></p>
             </div>
           </div>
 
@@ -109,15 +110,16 @@
             <img src="./assets/images/icon-pro.svg" alt="">
             <div class="info">
               <h3>Pro</h3>
-            <span>$15/mo</span>
+            <span id="price3">$15/mo</span>
+            <p class="caption"id="freeMonths3"></p>
             </div>
           </div>
-        </form>
+        </form><!-- Form2  closing tag -->
 
         <div class="switch">
           <p class="month">Monthly</p>
           <label class="toggle">
-            <input type="checkbox" />
+            <input type="checkbox" id="toggleSwitch"/>
             <span class="slider"></span>
           </label>
           <p class="year">Yearly</p>
@@ -128,7 +130,88 @@
            <button class="btn2"><strong>Next Step</strong></button>
         </div>
        </div><!-- Step-2 closing tag -->
+        
+     <div class="step-3" style="display: none;" ><!-- Step-3 opening tag -->
+      <div class="header">
+        <h1 class="head3">Pick add-ons</h1>
+          <p class="para">Add-ons help enhance your gaming experience.</p>
+      </div>
+      <form class="form3"><!-- Form3  opening tag -->
+        <div class="box" id="box-1">
+          <input  type="checkbox" id="service">
+          <div class="description">
+            <h3>Online service</h3>
+            <p class="p3">Access to multiplayer games</p>
+          </div>
+          <p class="price" id="p1">+$1/mo</p>
+        </div>
 
+          <div class="box" id="box-2">
+            <input type="checkbox" id="storage">
+            <div class="description">
+              <h3>Larger storage</h3>
+              <p class="p3">Extra 1TB of cloud save</p>
+            </div>
+            <p class="price" id="p2">+$2/mo</p>
+          </div>
+
+            <div class="box" id="box-3">
+              <input type="checkbox" id="profile">
+              <div class="description">
+                <h3>Customizable profile</h3>
+                <p class="p3">Custom theme on your profile</p>
+              </div>
+              <p class="price" id="p3">+$2/mo</p>
+             </div>
+
+      </form><!-- Form3 closing tag -->
+      <div class="buttons">
+        <button class="btn1"><strong>Go Back</strong></button>
+        <button class="btn2"><strong>Next Step</strong></button>
+     </div>
+     </div><!-- Step-3 closing tag -->
+
+
+
+     <div class="step-4" style="display: none;" ><!-- Step-4 opening tag -->
+      <div class="header">
+        <h1 class="head4">Finishing up</h1>
+          <p class="para">Double-check everything looks OK before confirming.</p>
+      </div>
+
+      <div class="confirmed-plan">
+        <div class="container">
+          <div class="selected-plan">
+            <p class="plan-name">Arcade(Monthly)</p>
+            <p class="plan-price">$9/mo</p> 
+          </div>
+          <hr>
+          <div class="addons">
+            <div class="selected-addon">
+              <p class="service-name">Online service</p>
+              <p class="service-price">+$1/mo</p>
+            </div>
+          </div>
+        </div>
+        <p class="total">Total(per month) <b>+$12/mo</b></p>
+      </div>
+
+      <div class="buttons">
+        <button class="btn1"><strong>Go Back</strong></button>
+        <button class="btn2"><strong>Confirm</strong></button>
+     </div>
+     </div><!-- Step-4 closing tag -->
+      
+
+      <div class="step-5" style="display: none;"><!-- Step-5 opening tag -->
+        <img src="./assets/images/icon-thank-you.svg" alt="">
+        <div class="header">
+          <h1 class="head5">Thank you!</h1>
+          <p class="para2"> Thanks for confirming your subscription! We hope you have fun
+            using our platform. If you ever need support, please feel free to
+            email us at support@loremgaming.com</p>
+        </div>
+      </div><!-- Step-5 opening tag -->
 
     </div><!-- Form1 div closing tag -->
   </div><!-- Display closing tag -->
